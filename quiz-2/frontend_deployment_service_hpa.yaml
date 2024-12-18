@@ -31,11 +31,11 @@ spec:
               containerPort: 80
           resources:
             requests:
-              memory: 150Mi
-              cpu: 150m
+              memory: 250Mi
+              cpu: 250m
             limits:
-              memory: 300Mi
-              cpu: 300m
+              memory: 500Mi
+              cpu: 500m
           readinessProbe:
             httpGet:
               path: /
@@ -67,10 +67,14 @@ spec:
   selector:
     app: nutri-fe
     tier: frontend
+  type: LoadBalancer
+  externalIPs:
+    - 192.168.49.2
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
+      nodePort: 30002
 
 ---
 # hpa.yaml
