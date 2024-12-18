@@ -26,6 +26,9 @@ spec:
         - name: nutri-fe
           image: 0xsera/nutri-fe:v0.0
           imagePullPolicy: Always
+          ports:
+            - protocol: TCP
+              containerPort: 80
           resources:
             requests:
               memory: 150Mi
