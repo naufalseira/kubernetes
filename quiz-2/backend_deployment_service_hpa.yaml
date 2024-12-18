@@ -26,6 +26,9 @@ spec:
         - name: nutri-be
           image: 0xsera/nutri-be:v0.0
           imagePullPolicy: Always
+          ports:
+            - protocol: TCP
+              containerPort: 8080
           resources:
             requests:
               memory: 150Mi
